@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Employees</title>
+</head>
+<body>
+    <ol>
+        <th:block th:each="employee : ${employees}">
+            <li th:inline="text">
+                [[${employee.name}]] <br/>
+                <p th:inline="text">[[${employee.address}]]</p>
+                <p th:object="${employee.laptop}" th:inline="text">[[*{brand}]] [[*{model}]]</p>
+            </li>
+        </th:block>
+    </ol>
+</body>
+</html>
+
